@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { TreePine, ArrowRight, Users, GraduationCap } from "lucide-react";
-import { teamMembers, supervisor } from "@/lib/mock-data";
+import { teamMembers, supervisors } from "@/lib/mock-data";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ const HomePage = () => {
           <Users className="h-5 w-5 text-primary" />
           <h2 className="text-2xl font-display font-bold text-foreground">Team Members</h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {teamMembers.map((m) => (
             <div key={m.name} className="stat-card text-center space-y-1">
               <div className="w-12 h-12 rounded-full gradient-forest mx-auto flex items-center justify-center text-primary-foreground font-bold text-lg">
@@ -62,15 +62,19 @@ const HomePage = () => {
             </div>
           ))}
         </div>
-        <div className="stat-card flex items-center gap-4">
-          <div className="w-14 h-14 rounded-full gradient-amber flex items-center justify-center shrink-0">
-            <GraduationCap className="h-7 w-7 text-accent-foreground" />
-          </div>
-          <div>
-            <p className="font-semibold text-foreground">{supervisor.name}</p>
-            <p className="text-sm text-muted-foreground">{supervisor.role}</p>
-          </div>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  {supervisors.map((person) => (
+    <div key={person.name} className="stat-card flex items-center gap-4">
+      <div className="w-14 h-14 rounded-full gradient-amber flex items-center justify-center shrink-0">
+        <GraduationCap className="h-7 w-7 text-accent-foreground" />
+      </div>
+      <div>
+        <p className="font-semibold text-foreground">{person.name}</p>
+        <p className="text-sm text-muted-foreground">{person.role}</p>
+      </div>
+    </div>
+  ))}
+</div>
       </div>
     </div>
   );

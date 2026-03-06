@@ -53,10 +53,13 @@ export const processingSteps = [
 ];
 
 export const teamMembers = [
-  { name: "Dr. Sarah Chen", role: "Principal Investigator" },
-  { name: "Amit Patel", role: "LiDAR Specialist" },
-  { name: "Maria Gonzalez", role: "ML Engineer" },
-  { name: "James Okafor", role: "Forestry Analyst" },
+  { name: "Sadaqat Ali", role: "Team Member" },
+  { name: "Noman Shahid", role: "Team Member" },
+  { name: "Ahmad Waheed", role: "Team Member" },
 ];
 
-export const supervisor = { name: "Prof. David Liu", role: "Project Supervisor" };
+
+export const supervisors = [
+  { name: "Dr Bilal Jan", role: "Supervisor" },
+  { name: "Dr. Omar Usman", role: "Co-Supervisor" },
+];
