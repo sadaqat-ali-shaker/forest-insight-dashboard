@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<title>LiDAR Forest Viewer</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/potree@1.8/build/potree/potree.css">
+
+<style>
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#potree_render_area {
+    width: 100%;
+    height: 100%;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="potree_render_area"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/potree@1.8/build/potree/potree.js"></script>
+
+<script>
+
+const viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
+
+viewer.setEDLEnabled(true);
+viewer.setFOV(60);
+viewer.setPointBudget(1000000);
+viewer.setBackground("gradient");
+
+Potree.loadPointCloud(
+  "http://localhost:8081/potree_output/metadata.json",
+  "forest",
+  function(e){
+
+    const pointcloud = e.pointcloud;
+
+    viewer.scene.addPointCloud(pointcloud);
+
+    viewer.fitToScreen();
+
+  }
+);
+
+</script>
+
+</body>
+</html>
