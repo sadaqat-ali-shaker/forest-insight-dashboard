@@ -1,0 +1,72 @@
+Metadata-Version: 2.2
+Name: laszip
+Version: 0.3.0
+Summary: Bindings for LASzip made with pybind11
+Author-Email: Thomas Montaigu <thomas.montaigu@laposte.net>
+License: MIT License
+         
+         Copyright (c) 2023 Thomas Montaigu
+         
+         Permission is hereby granted, free of charge, to any person obtaining a copy
+         of this software and associated documentation files (the "Software"), to deal
+         in the Software without restriction, including without limitation the rights
+         to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+         copies of the Software, and to permit persons to whom the Software is
+         furnished to do so, subject to the following conditions:
+         
+         The above copyright notice and this permission notice shall be included in all
+         copies or substantial portions of the Software.
+         
+         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+         IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+         FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+         AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+         LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+         SOFTWARE.
+         
+Project-URL: repository, https://github.com/tmontaigu/laszip-python
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+# laszip-python
+
+Unofficial bindings between [Python][python-site] and [LASzip][laszip-github] made
+using [pybind11][pybind11-github].
+
+The main purpose is for integration within [laspy][laspy-github].
+
+# Building
+
+Building can be done using cmake or pip.
+
+First `pybind11` needs to be installed. You can install it via `vcpkg` or `conda` or other means.
+
+By default a vendored version of LASZip is used, to use the system installed version
+pass `-DUSE_VENDORED_LASZIP=OFF`
+```
+set -gx SKBUILD_CMAKE_ARGS "-DUSE_VENDORED_LASZIP=OFF"
+pip wheel .
+```
+
+To help cmake find Laszip you may have to use `-DCMAKE_TOOLCHAIN_FILE=/some/path/vcpg.cmake`
+if you used vcpkg to install laszip, or `-DCMAKE_PREFIX_PARTH`
+(or `-DCMAKE_INCLUDE_PATH=...` and `-DCMAKE_LIBRARY_PATH=...` in rare cases).
+
+
+As setup.py calls cmake the same options make need to be given:
+```shell
+set -gx SKBUILD_CMAKE_ARGS -DCMAKE_PREFIX_PATH=...
+pip install .
+```
+
+## Source distribution
+```
+pip install build
+python -m build . --sdist
+```
+
+[laszip-github]: https://github.com/LASzip/LASzip
+[python-site]: https://www.python.org/ 
+[pybind11-github]: https://github.com/pybind/pybind11
+[laspy-github]: https://github.com/laspy/laspy
