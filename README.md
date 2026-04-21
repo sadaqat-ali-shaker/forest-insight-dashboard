@@ -1,73 +1,135 @@
-# Welcome to your Lovable project
+# Forest Insight Dashboard: LiDAR-Based Forest Monitoring System
 
-## Project info
+## 1. Introduction
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The **Forest Insight Dashboard** is a Final Year Project (FYP) developed to analyze and visualize forest data using LiDAR (Light Detection and Ranging) technology. The system processes point cloud data to extract meaningful insights about forest structure, including tree height, canopy density, and vegetation distribution.
 
-## How can I edit this code?
+The project integrates data processing, machine learning techniques, and a web-based dashboard to provide an accessible platform for forest monitoring and analysis.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 2. Objectives
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+* To process and analyze LiDAR-based forest data
+* To estimate forest attributes such as tree height and density
+* To develop an interactive dashboard for visualization
+* To support environmental monitoring and decision-making
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 3. System Overview
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+The system consists of two main components:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Frontend
 
-Follow these steps:
+A web-based user interface developed using modern JavaScript frameworks for visualization and interaction.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Backend
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+A data processing and analysis layer responsible for handling LiDAR data, performing computations, and serving results through APIs.
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## 4. Technologies Used
+
+### Frontend
+
+* React (Vite)
+* TypeScript
+* Tailwind CSS
+
+### Backend
+
+* Python
+* Flask / FastAPI
+* NumPy
+* Pandas
+* Scikit-learn
+* LiDAR processing libraries (e.g., laspy)
+
+---
+
+## 5. Project Structure
+
+```bash
+forest-insight-dashboard/
+│
+├── frontend/        # Frontend application
+├── backend/         # Backend services and processing
+├── src/             # Frontend source code
+├── public/          # Static assets
+├── sample_data/     # Sample LiDAR datasets
+├── screenshots/     # System interface images
+└── README.md
+```
+
+---
+
+## 6. Installation and Setup
+
+### Clone Repository
+
+```bash
+git clone https://github.com/sadaqat-ali-shaker/forest-insight-dashboard.git
+cd forest-insight-dashboard
+```
+
+### Frontend Setup
+
+```bash
+cd frontend
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Backend Setup
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+cd backend
+python -m venv venv
+venv\Scripts\activate      # On Windows
+pip install -r requirements.txt
+python app.py
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 7. Key Features
 
-## What technologies are used for this project?
+* Processing of LiDAR point cloud data
+* Extraction of forest structural attributes
+* Interactive dashboard for visualization
+* Integration of data analysis and web technologies
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 8. Use Cases
 
-## How can I deploy this project?
+* Forest monitoring and management
+* Environmental and ecological research
+* Biomass and vegetation analysis
+* Academic and research applications
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## 9. Future Work
 
-Yes, you can!
+* Integration of real-time LiDAR data sources
+* Enhancement using deep learning models
+* Cloud-based deployment
+* Improved scalability and performance
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 10. Team Members
+
+* Sadaqat Ali
+* Noman Shahid
+* Ahmad Waheed
+
+---
+
+## 11. License
+
+This project is developed for academic purposes as part of a Final Year Project.
