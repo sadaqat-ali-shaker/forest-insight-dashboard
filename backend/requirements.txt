@@ -1,0 +1,10 @@
+flask
+flask-cors
+werkzeug
+pandas
+numpy
+scipy
+scikit-image
+laspy
+joblib
+scikit-learn
