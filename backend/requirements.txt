@@ -1,0 +1,21 @@
+# Web Framework & Server
+fastapi
+uvicorn
+python-multipart
+
+# Data Manipulation & Math
+pandas
+numpy
+scipy
+joblib
+
+# Geospatial & LiDAR Processing
+laspy[lazrs]
+pyproj
+scikit-image
+
+# Machine Learning
+scikit-learn
+
+# Utilities
+pathlib

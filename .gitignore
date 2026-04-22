@@ -1,0 +1,12 @@
+# Data files
+*.db
+*.csv
+# Large lidar files
+*.laz
+backend/uploads/
+# Large assets
+orignal_data_files/
+frontend/public/
+
+# Python
+venv/
